@@ -1,0 +1,64 @@
+#include<iostream.h>
+#include<conio.h>
+
+class person
+{
+	private:
+		st name;
+		int age;
+	public:
+		void setperson(int a,st n);
+		{
+			name = n;
+			age = a;
+		}
+		void displayperson()
+		{
+			cout<<"Name :  "<<name<<endl;
+			cout<<"Age :  "<<age<<endl;
+		}
+};
+class student: person
+{
+	private:
+		float percentage;
+	public:
+		void setstudent(st n,int a, float p);
+		{
+			percentage = p;
+			setperson(a,n);
+		}
+		void displaystudent()
+		{
+			cout<<"students details are : /n";
+			displayperson()
+			cout<<"percentage is :  "<<percentage<<endl;
+		}
+};
+
+class professor: person
+{
+	private:
+		float salary;
+	public:
+		void setprofessor(st n,int a,float s)
+		{
+			salary = s;
+			setperson(a,n);
+		}
+		void displayprofessor()
+		{
+			cout<<"professor details are :  /n";
+			displayperson()
+			cout<<"salary : "<<salary<<endl;
+		}
+};
+int main()
+{
+	student s;
+	s.setstudent("Hemal",15,75);
+	s.displaystudent();
+	professor p;
+	p.setprofessor("Patel sir",22,000);
+	p.displayprofessor();
+}
